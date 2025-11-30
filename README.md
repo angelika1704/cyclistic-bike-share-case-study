@@ -1,99 +1,130 @@
- Divvy Bike-Share Analysis
+Divvy Bike-Share Case Study – Google Data Analytics Capstone Project
 
-Autor: Angelica Durango
+This repository contains my complete analytical workflow for the Divvy Bike-Share Case Study, the capstone project of the Google Data Analytics Professional Certificate.
+The main objective is to compare the usage behavior of casual riders and annual members, and to provide data-driven recommendations for increasing membership conversions.
 
-Este proyecto analiza el comportamiento de los usuarios del sistema de bicicletas Divvy para identificar diferencias entre usuarios members y casual, con el objetivo de proponer estrategias que fomenten la conversión a suscripciones anuales.
+📌 Project Context
 
-El análisis se realizó siguiendo la metodología CRISP-DM, usando Excel para la limpieza de datos y Power BI para la visualización.
+Divvy (Cyclistic) is a large bike-share program operating in Chicago. The marketing team wants to understand how casual riders differ from annual members to determine which tactics can effectively convert casual users into paying members.
 
-Contenido del repositorio
+This project follows the CRISP-DM methodology:
 
-README.md → descripción completa del proyecto
+Business Understanding
 
-case_study_report.pdf → resumen del caso
+Data Understanding
 
-screenshots/ → capturas del dataset limpio y del dashboard
+Data Preparation
 
-Nota: El dataset limpio no se sube directamente debido a su tamaño. En su lugar se incluyen capturas.
+Analysis
 
- Limpieza de datos (Excel)
+Visualization
 
-El dataset original fue limpiado y transformado en Excel aplicando los siguientes pasos:
+Recommendations
 
-Normalización del formato fecha-hora
+⚠️ Important Note — Data Limitation
 
-Eliminación de valores faltantes
+Due to file size restrictions and memory limitations when handling large datasets in Excel and Power BI, the full 12-month dataset could not be processed.
 
-Detección y eliminación de outliers (viajes negativos o extremadamente largos)
+👉 For this reason, the analysis was completed using three months of Divvy data (Q1), which allowed for clean processing, accurate calculations, and stable visualization.
 
-Limpieza de espacios y texto
+Despite this limitation, the findings are consistent, meaningful, and aligned with expected full-year patterns.
 
-Creación de nuevas columnas para el análisis:
+📂 Repository Structure
+📁 Divvy-Bike-Share-Case-Study
+│
+├── 📄 CLEAN_DATA.png              # Clean dataset used for analysis
+├── 📄 CLEAN_DATA_PBI.png           # CSV version for Power BI
+├── 📊 INSIGHTS.png               # Full Power BI interactive dashboard
+├── 📄 Divvy_Final_Report.pdf       # Professional final report
+│
+├── 📄 README.md                    # Project documentation (this file)
 
-ride_length  
-ride_length_minutes  
-day_of_week  
-month  
-hour  
+🧼 Data Cleaning & Preparation
 
+All data cleaning was performed in Excel, and all visualizations were created in Power BI.
 
-Debido al gran tamaño del archivo, no se incluye el Excel completo.
-En la carpeta screenshots/ se puede ver una vista previa del dataset limpio.
+Key cleaning steps:
 
-📊 Visualización (Power BI)
+✔ Removal of rows with missing station information
+✔ Formatting of all datetime fields
+✔ Calculation of ride_length_minutes using DATEDIFF logic
+✔ Identification and removal of outliers
+✔ Creation of new analytical fields:
 
-El dashboard desarrollado en Power BI incluye:
+day_of_week
 
-Número de viajes por mes
+month_year
 
-Duración media del viaje
+month_number
 
-Uso por tipo de bicicleta
+month_name
 
-Horas pico de uso
+hour
 
-Si el archivo .pbix no puede subirse por tamaño, se incluye una versión comprimida en .zip o capturas del dashboard dentro de screenshots/.
+✔ Standardization of text fields (capitalization, whitespace removal)
+✔ Validation of data integrity prior to BI modeling
 
-🔍 Hallazgos principales
+The final dataset used for analysis contained 700K+ clean records.
 
-Los usuarios casuales realizan viajes más largos que los miembros.
+📊 Key Insights
+1️⃣ Casual riders take longer rides
 
-Los miembros usan la bicicleta principalmente entre semana.
+Members: 12–15 minutes average
 
-Los usuarios casuales muestran un uso más recreativo, especialmente en fines de semana.
+Casual: 25–35 minutes average
+→ Casual riders use bikes primarily for leisure, not transportation.
 
-Los miembros realizan más viajes al año y de forma más consistente.
+2️⃣ Different weekday usage patterns
 
-🚀 Recomendaciones
+Members → ride mostly Monday–Friday (commuting behavior)
 
-Crear campañas dirigidas a convertir usuarios casuales en miembros.
+Casual riders → peak on weekends
 
-Enfatizar los beneficios económicos de la suscripción anual.
+3️⃣ Hourly trends
 
-Implementar promociones estacionales durante meses de mayor uso recreativo.
+Members peak during morning and afternoon commute hours
 
-📄 Resumen del caso
+Casual riders peak between 11:00 and 18:00
 
-El documento completo del análisis está disponible aquí:
+4️⃣ Seasonality
 
-case_study_report.pdf
+(Within the first 3 months analyzed and aligned with typical yearly trends)
 
-Incluye:
+Usage increases from January → March
 
-Objetivo
+Warmer months historically show even stronger usage
 
-Metodología
+5️⃣ Bike type usage
 
-Proceso de limpieza
+Both groups use docked bikes the most, with casual users showing more variation across tourist-heavy areas.
 
-Resultados
+💡 Recommendations
+✔ Convert casual → members with leisure-focused offers
 
-Conclusiones y recomendaciones
+Weekend passes
 
-🛠 Tecnologías utilizadas
+Trial membership periods
 
-Excel
+Summer discounts
 
-Power BI
+Tourist-specific promotions
 
-GitHub
+✔ Improve bike availability during commuting hours
+
+More bikes in residential zones (7–9 AM)
+
+More bikes in business areas (4–6 PM)
+
+✔ Seasonal marketing strategy
+
+Launch campaigns between March and August
+
+Promote leisure routes and outdoor experiences
+
+🛠️ Tools Used
+
+Microsoft Excel → data cleaning, transformation, validation
+
+Power BI → data modeling, DAX calculations, full dashboard creation
+
+GitHub → documentation & portfolio publication
